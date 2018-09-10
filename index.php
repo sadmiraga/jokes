@@ -11,9 +11,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        echo 'hello';
-        echo 'test';
-        header('location:test.php');
+        
+        echo 'main message';
         ?>
         
     </body>
