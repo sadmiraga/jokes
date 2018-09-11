@@ -11,8 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        
-        echo 'main message';
+        require_once 'template.html';
         ?>
         
     </body>
