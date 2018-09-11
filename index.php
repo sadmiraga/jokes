@@ -12,7 +12,10 @@ and open the template in the editor.
     <body>
         <?php
         require_once 'template.html';
-        echo 'konekcija test';
+        require_once 'connection.php';
+        
+        
+        
         ?>
         
     </body>
