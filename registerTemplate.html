@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel="stylesheet" href="registerTemplateDesign.css">
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div class="panel">
+		<div class="state"><br><i class="fa fa-unlock-alt"></i><br><h1>Register</h1></div>
+		<div class="form">
+			<input placeholder='First Name' type="text">
+                        <input placeholder='Last Name' type="text">
+                        <input placeholder='Email' type="text">
+			<input placeholder='Password' type="text">
+			<div onclick="location.href='registerExecute.php';" class="login">Register</div>
+		</div>
+                <br>
+		<?php
+                echo 'Regiser error';
+                ?>
+	</div>
+        
+    </body>
+</html>
