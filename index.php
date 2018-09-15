@@ -1,7 +1,20 @@
 <?php
     session_start();
+    
+    //PRAZAN ERROR ZA REGISTER
     $_SESSION['registerError'] ="";
-    $_SESSION['username']="";
+
+        if(!isset($_SESSION['username'])){
+            require_once 'guest_template.html';
+            
+        } else 
+        {
+            require_once 'user_template.html';
+        }
+    
+    
+    
+    
 ?>
 <!DOCTYPE html>
 
@@ -12,9 +25,16 @@
     </head>
     <body>
         <?php
-        require_once 'template.html';
+        
         require_once 'connection.php';
-        echo $_SESSION['username'];
+        
+       
+        if(!isset($_SESSION['username'])){
+            echo 'FUCK NOT LOGGED IN';
+        } else 
+        {
+            echo $_SESSION['username'];
+        }
         
         
         ?>

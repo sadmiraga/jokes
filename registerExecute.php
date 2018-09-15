@@ -14,19 +14,26 @@ if(isset($_GET['registerSubmitButton'])){
     $email = $_GET['email'];
     $password = $_GET['password'];
     
+    
+    //provjera da li vec postoji korisnik sa istim usernameom
     $stmt = $pdo->prepare("SELECT count(*) FROM users WHERE username=?");
     $stmt->execute([$username]);
     $usernameCount = $stmt->fetchColumn();
     
-    //provjera da li vec postoji korisnik sa istim usernameom
+    
     if($usernameCount == 0){
+       
+        //HASHING PASSWORD
+        $password = md5($password);
         
+        //UBACIVANJE PODATAKA U BAZU 
         $query = "INSERT INTO users (username,geslo,email,userType,firstName,lastName) VALUES (:username,:geslo,:email,3,:firstName,:lastName)";
         $stmt = $pdo -> prepare($query);
         $stmt -> execute(['username'=> $username, 'geslo' => $password, 'email'=> $email, 'firstName'=> $ime, 'lastName'=> $prezime]);
         
-        header("Location:index.php");
         $_SESSION['username'] = $username;
+        header("Location:index.php");
+        
         
         
         
@@ -40,19 +47,6 @@ if(isset($_GET['registerSubmitButton'])){
     
     
     
-    
-    
-    echo '<br>';
-    echo $ime;
-    echo '<br>';
-    echo $prezime;
-    echo '<br>';
-    echo $username;
-    echo '<br>';
-    echo $email;
-    echo '<br>';
-    echo $password;
-    echo '<br>';
     
     
     
