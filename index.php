@@ -1,9 +1,10 @@
+<?php
+    session_start();
+    $_SESSION['registerError'] ="";
+    $_SESSION['username']="";
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,7 +14,7 @@ and open the template in the editor.
         <?php
         require_once 'template.html';
         require_once 'connection.php';
-        
+        echo $_SESSION['username'];
         
         
         ?>

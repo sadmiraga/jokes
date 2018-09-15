@@ -17,7 +17,7 @@ body {
   overflow: hidden;
 }
 .panel {
-  width: 400px;
+  width: 450px;
   height: 500px;
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
@@ -109,7 +109,7 @@ body {
   text-align: center;
   line-height: 45px;
 }
-.panel input[type='text'] {
+.panel input[type='text']{
   background-color: #22232a;
   -webkit-border-radius: 45px;
      -moz-border-radius: 45px;
@@ -123,6 +123,10 @@ body {
   width: calc(100% - 15px);
   margin-bottom: 10px;
 }
+
+
+
+
 .panel input[type='text'][placeholder] {
   color: #656d79;
   font-size: 15px;

@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -15,18 +17,28 @@ and open the template in the editor.
     <body>
         
         <div class="panel">
-		<div class="state"><br><i class="fa fa-unlock-alt"></i><br><h1>Register</h1></div>
-		<div class="form">
-			<input placeholder='First Name' type="text">
-                        <input placeholder='Last Name' type="text">
-                        <input placeholder='Email' type="text">
-			<input placeholder='Password' type="text">
-			<div onclick="location.href='registerExecute.php';" class="login">Register</div>
-		</div>
-                <br>
-		<?php
-                echo 'Regiser error';
+		<div class="state"><br><i class="fa fa-unlock-alt"></i><br><h1>Register</h1>
+                <?php
+                echo $_SESSION["registerError"];
                 ?>
+                    
+                </div>
+		
+                <div class="form">
+                    <form action="registerExecute.php" method="get">
+			<input placeholder='First Name' name="firstName" type="text">
+                        <input placeholder='Last Name' name="lastName" type="text">
+                        <input placeholder='Username' name="username" type="text">
+                        <input placeholder='Email' name="email" type="text">
+			<input placeholder='Password' name="password" type="text">
+                        
+                        
+                        <!-- submit button -->
+                        <button name="registerSubmitButton"  class="login">Register</button>
+                    </form>
+		</div>
+                
+		
 	</div>
         
     </body>
