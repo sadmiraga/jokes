@@ -4,6 +4,7 @@ session_start();
 
 require_once 'connection.php';
 
+// DA LI JE SUBMITANO SA DUBMETA UOPSTE
 if(isset($_GET['registerSubmitButton'])){
     
     

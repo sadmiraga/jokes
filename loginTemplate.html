@@ -1,9 +1,10 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <link rel="stylesheet" href="loginTemplateDesign.css">
@@ -17,16 +18,22 @@ and open the template in the editor.
         <!-- LOGIN FORM -->
         
         <div class="panel">
-		<div class="state"><br><i class="fa fa-unlock-alt"></i><br><h1>Log in</h1></div>
-		<div class="form">
-			<input placeholder='username' type="text">
-			<input placeholder='password' type="text">
-			<div class="login">Login</div>
-                        <br>
-                        <br>
+		<div class="state"><br><i class="fa fa-unlock-alt"></i><br><h1>Log in</h1>
                         <?php
-                        echo 'login error';
+                        echo '<br>';
+                        echo $_SESSION['loginError'];
                         ?>
+                </div>
+            <br>
+            <br>
+		<div class="form">
+                                        
+                    <form action="loginExecute.php" method="get">
+			<input name="loginUsername" placeholder='username' type="text" required="required" >
+                        <input name="loginPassword" placeholder='password' type="text" required="required" >
+                        <button name="loginSubmitButton"  class="login">Login</button>
+			
+                    </form>
 		</div>
 		
 	</div>

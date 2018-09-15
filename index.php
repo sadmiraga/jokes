@@ -1,8 +1,9 @@
 <?php
     session_start();
     
-    //PRAZAN ERROR ZA REGISTER
+    //PRAZAN ERROR ZA REGISTER I LOGIN
     $_SESSION['registerError'] ="";
+    $_SESSION['loginError']="";
 
         if(!isset($_SESSION['username'])){
             require_once 'guest_template.html';
