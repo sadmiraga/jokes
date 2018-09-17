@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/jokes/loginTemplate.html</file>
-            <file>file:/C:/xampp/htdocs/jokes/index.php</file>
-            <file>file:/C:/xampp/htdocs/jokes/login.php</file>
-            <file>file:/C:/xampp/htdocs/jokes/loginExecute.php</file>
+            <file>file:/C:/xampp/htdocs/jokes/addJokeTemplate.html</file>
+            <file>file:/C:/xampp/htdocs/jokes/user_template.html</file>
+            <file>file:/C:/xampp/htdocs/jokes/addJoke.php</file>
         </group>
     </open-files>
 </project-private>

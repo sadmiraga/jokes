@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="addJokeTemplateDesign.css">
+<title> Add Joke </title>
+</head>
+<body>
+
+    <br>
+    <br>
+    <br>
+    
+    <form action="addJokeExecute.php" method="get" id="contact">
+     <div class="container">
+        <div class="head">
+        <h2>Add Joke</h2>
+        </div>
+        <textarea name="message" placeholder="Joke Text"></textarea>
+        <br />
+        <select id="selectCategory" name="category">
+            <option value="" selected> Categories </option>
+            <?php
+            require_once 'optionFunction.php';
+            ?>
+        </select>
+        
+        
+        <div class="message"> poruka</div>
+        <br>
+        <input id="submitButton" type="submit" name="addJokeSubmit" value="Add">
+    </div>
+    </form>
+    
+    
+    
+    
+</body>
+</html>
