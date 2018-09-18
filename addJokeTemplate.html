@@ -17,18 +17,29 @@
         <div class="head">
         <h2>Add Joke</h2>
         </div>
-        <textarea name="message" placeholder="Joke Text"></textarea>
+        <textarea name="jokeText" placeholder="Joke Text"></textarea>
         <br />
         <select id="selectCategory" name="category">
             <option value="" selected> Categories </option>
             <?php
+            //SELECT STAVEK ZA KATEGORIJE VICEVA
             require_once 'optionFunction.php';
             ?>
         </select>
         
         
-        <div class="message"> poruka</div>
-        <br>
+        
+            <br>
+            
+            <!-- Add Joke Error -->
+            <p style="color:white; font-family: Comic Sans MS; font-size: 20px;" >
+                <?php            
+                    echo $_SESSION['addJokeError'];            
+                ?>
+            </p>
+        
+        
+        
         <input id="submitButton" type="submit" name="addJokeSubmit" value="Add">
     </div>
     </form>

@@ -1,10 +1,13 @@
 <?php
     session_start();
     
-    //PRAZAN ERROR ZA REGISTER I LOGIN
+    //PRAZAN ERROR ZA REGISTER,LOGIN,ADD JOKE
     $_SESSION['registerError'] ="";
     $_SESSION['loginError']="";
+    $_SESSION['addJokeError']="";
 
+    
+        // PRIKAZ TEMPLATE STRANICE ZA GUESTA ILI USERA
         if(!isset($_SESSION['username'])){
             require_once 'guest_template.html';
             
@@ -32,7 +35,7 @@
         
        
         if(!isset($_SESSION['username'])){
-            echo 'FUCK NOT LOGGED IN';
+            echo 'NOT LOGGED IN';
         } else 
         {
             echo $_SESSION['username'];
