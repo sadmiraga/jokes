@@ -5,8 +5,9 @@
     $_SESSION['registerError'] ="";
     $_SESSION['loginError']="";
     $_SESSION['addJokeError']="";
-    $_SESSION['categoryNameJokes']="test";
-
+    
+  
+    
     
         // PRIKAZ TEMPLATE STRANICE ZA GUESTA ILI USERA
         if(!isset($_SESSION['username'])){
@@ -41,8 +42,6 @@
         {
             echo $_SESSION['username'];
         }
-        
-       
         
         
         ?>
