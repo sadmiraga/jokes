@@ -14,15 +14,44 @@ and open the template in the editor.
     <body>
         
         
-        <div id="username">
-            sadmiraga
-        </div>
+       
+        
+       
         
         
-        <img id="slikaProfila" src="profilePictures/sadmir.jpg">
+        
+        
+        
         
         
         <?php
+        
+            require_once 'connection.php';
+            
+            //USERNAME OD USERA
+            $stmt = $pdo->prepare("SELECT username FROM users WHERE id=?");
+            $stmt->execute([$_SESSION['idOdUseraSaPosta']]);
+            $postedUsername = $stmt->fetchColumn();
+            
+            //ISPIS USERNAME
+            echo '<div id="username">';
+                echo $postedUsername;
+            echo '</div>';
+            
+        
+            //URL SLIKE OD USERA       
+            $stmt = $pdo->prepare("SELECT profilePictureUrl FROM profilepictures WHERE user_id=?");
+            $stmt ->execute([$_SESSION['idOdUseraSaPosta']]);
+            $picUrl = $stmt->fetchColumn();
+            
+            //DODAVANJE SLIKE
+            echo '<img id="slikaProfila" alt="error" src="';
+                echo $picUrl;
+            echo '">';
+        
+        
+        
+        
             //davanje vrijednosti sessionu odvisno do toga da li user usera prati
             require_once 'connection.php';
             
