@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel="stylesheet" href="userProfileTemplateDesign.css">
+        <title>Profile Visit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        
+        <div id="username">
+            sadmiraga
+        </div>
+        
+        
+        <img id="slikaProfila" src="profilePictures/sadmir.jpg">
+        
+        
+        <?php
+            //davanje vrijednosti sessionu odvisno do toga da li user usera prati
+            require_once 'connection.php';
+            
+            $stmt = $pdo->prepare("SELECT count(*) FROM follows WHERE following_id=? AND followed_id=?");
+            $stmt->execute([$_SESSION['userID'],$_SESSION['idOdUseraSaPosta']]);
+            $followingCount = $stmt->fetchColumn();
+            
+            if($followingCount == 0){
+                $_SESSION['follow_unfollow'] = "FOLLOW";
+            } else {
+                $_SESSION['follow_unfollow'] = "UNFOLLOW";
+            }
+        ?>
+        
+        
+        
+        
+        <a id="follow_unfollow_link" href="follow_unfollow.php">
+            <div id="followButton">
+                <?php
+                    echo $_SESSION['follow_unfollow'];
+                ?>
+            </div>
+        </a>
+        
+        
+        
+        
+    </body>
+</html>

@@ -27,9 +27,12 @@ while($row = $stmt->fetch()){
     
     echo '<div class="kontenjer">';
         
-        //Ispis Profilne Slike
-        echo '<img class="circle-pic" src="'.$linkSlike.'" >';
-        
+        // SLIKA PROFILA
+            //href koji salje ID od usera na cij je profil kliknuto 
+            echo '<a href="userProfile.php?idOdUseraSaPosta='.$row['user_id'].'">';
+                //ispis slike
+                echo '<img class="circle-pic" src="'.$linkSlike.'" >';
+            echo '</a>';
         
         
         // TEXT VICA
@@ -42,6 +45,10 @@ while($row = $stmt->fetch()){
         echo '<div class="like" >';
             echo 'Like';
         echo '</div>';
+        
+        
+        
+        
         
         // BROJ LAJKOVA
         echo '<div class="numLikes">';

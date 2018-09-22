@@ -32,7 +32,7 @@
     <body>
         <?php
         
-      
+        require_once 'connection.php';
         
         
        
@@ -41,6 +41,16 @@
         } else 
         {
             echo $_SESSION['username'];
+            
+            
+            // ID OD PRIJAVLJENOG USERA
+            $stmt = $pdo->prepare("SELECT id FROM users WHERE username=:username LIMIT 1 ");
+            $stmt->execute(['username'=>$_SESSION['username']]);
+            $userID  = $stmt->fetchColumn();
+            $_SESSION['userID'] = $userID;
+            echo '<br>';
+            echo $_SESSION['userID'];
+            
         }
         
         
