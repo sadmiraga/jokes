@@ -32,7 +32,25 @@ if(isset($_GET['registerSubmitButton'])){
         $stmt = $pdo -> prepare($query);
         $stmt -> execute(['username'=> $username, 'geslo' => $password, 'email'=> $email, 'firstName'=> $ime, 'lastName'=> $prezime]);
         
+        
+        
         $_SESSION['username'] = $username;
+        
+       
+        
+        //UZIMANJE ID OD NOVO REGISTROVANOG USERA
+        $stmt = $pdo->prepare("SELECT id FROM users WHERE username=:username LIMIT 1 ");
+        $stmt->execute(['username'=>$_SESSION['username']]);
+        $userID  = $stmt->fetchColumn();
+        
+        
+        //UBACIVANJE DEFAUT PROFILNE SLIKE U BAZU PODATAKA
+        $query = "INSERT INTO profilepictures (user_id,profilePictureUrl) VALUES (:userID,'profilePictures/default-profile-picture.jpg')";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute(['userID'=>$userID]);
+        
+        
+        
         header("Location:index.php");
         
         
