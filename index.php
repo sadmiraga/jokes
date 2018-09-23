@@ -61,7 +61,7 @@
                 echo 'Find people to follow on <a href="categories.php" >categories</a> ';
                 
             } else {
-                require_once 'home.php';
+                require_once 'homeTemplate.html';
             }
             
             
