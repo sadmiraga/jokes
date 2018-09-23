@@ -38,6 +38,9 @@
        
         if(!isset($_SESSION['username'])){
             echo 'NOT LOGGED IN';
+            
+            require_once 'notLoggedInHomeTemplate.html';
+            
         } else 
         {
             echo 'logged as : ';

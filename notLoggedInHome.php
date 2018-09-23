@@ -1,10 +1,12 @@
 <?php
 
+
+
    //SELECT STAVEK ZA JOKE
         
-        $query = "SELECT * FROM jokes WHERE user_id IN(SELECT followed_id FROM follows WHERE following_id = ?) ORDER BY time DESC";
+        $query = "SELECT * FROM jokes  ORDER BY time DESC";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$_SESSION['userID']]);
+        $stmt->execute();
         
         while($row = $stmt->fetch()){
             
@@ -16,7 +18,7 @@
             echo '<div class="kontenjer">';
             
                 //Ispis slike
-                echo '<a class="likeHref" href="userProfile.php?idOdUseraSaPosta='.$row['user_id'].'">';
+                echo '<a class="likeHref" href="login.php">';
                     echo '<img class="circle-pic" src="'.$linkSlikeUsera.'">';
                 echo '</a>';
             
@@ -25,22 +27,13 @@
                     echo $row['jokeText'];
                 echo '</div>';
                 
-                    //PROVJERA DA LI JE USER VEC LIKEDOVO OBJAVU
-                    $stmt3 = $pdo->prepare("SELECT count(*) FROM likes WHERE user_id=? AND liked_Joke_Id=? ");
-                    $stmt3->execute([$_SESSION['userID'],$row['id']]);
-                    $jesilLajko = $stmt3->fetchColumn();
-        
-                    if($jesilLajko == 0){
-                        $likeOrNoLike = "Like";
-                    } else {
-                        $likeOrNoLike = "Unlike";
-                    }
+                    
             
             
                 // LIKE BUTTON
-                echo '<a class="likeHref" href="homeLike.php?idFore='.$row['id'].'">';
+                echo '<a class="likeHref" href="login.php">';
                     echo '<div class="like" >';
-                        echo $likeOrNoLike;
+                        echo 'Like';
                     echo '</div>';
                 echo '</a>';
             
