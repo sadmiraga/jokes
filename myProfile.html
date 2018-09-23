@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'user_template.html';
-echo $_SESSION['username'];
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -12,28 +12,19 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <link rel="stylesheet" href="myProfileTemplateDesign.css">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
-        
-        
     
-        
-        <form action="" method="post" enctype="multipart/form-data">
-            
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <br>
-            <br>
-            <input type="submit" name="submit" value="Upload Picture">
-        </form>
-        
-        
     <?php
-       require_once 'upload.php';
+        require_once 'myProfileIspis.php';
     ?>
         
+    
+            
         
     
 </html>

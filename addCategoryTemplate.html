@@ -1,0 +1,28 @@
+<?php
+    require_once 'user_template.html';
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="addCategoryDesign.css">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div id="naslov">ADD NEW CATEGORY</div>
+        
+        <div id="forma">
+            <form action="addCategoryExecute.php" method="get">
+                
+                <input id="inputNewCategory" type="text" name="imeNoveKategorije" placeholder=" category name">
+                <br> <br>
+                <input id="newCategorySubmitButton" type="submit" name="newCategorySubmit" value="ADD CATEGORY">
+            </form>
+        </div>
+        
+        
+        
+    </body>
+</html>

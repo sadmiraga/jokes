@@ -13,4 +13,4 @@ $id =  $_SESSION['userID'];
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$link,$id]);
     
-        header("Location:index.php");
+        header("Location:myProfile.php");
