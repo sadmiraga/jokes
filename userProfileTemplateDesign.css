@@ -1,3 +1,62 @@
+.kontenjer{
+    margin-bottom: 10%;
+}
+
+.fora{
+    max-width: 50%;
+    min-height: 40px;
+    outline: 3px solid white;
+    margin-left: 25%;
+    margin-right: 25%;
+    overflow-wrap: break-word;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    padding:10px;
+}
+
+.like{
+    outline:3px solid white;
+    display:inline-block;
+    margin-left: 25%;
+    width: 10%;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;    
+}
+
+.likeHref{
+    text-decoration: none;
+    color:white;
+}
+
+.likeHref:hover > .like{
+    background-color: white;
+    color:black;
+}
+
+.share {  
+    outline:3px solid white;
+    width: 10%;
+    display:inline-block;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    
+        
+}
+
+.numLikes{
+        outline:3px solid white;
+    width: 10%;
+    display:inline-block;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
 #slikaProfila{
   width: 20%;;
   height: 20%;
@@ -43,7 +102,5 @@
 #follow_unfollow_link:hover > #followButton{
     
     background-color: white;
-    color:black;
-    
-    
+    color:black;   
 }

@@ -13,6 +13,7 @@ if ($_SESSION['idOdUseraSaPosta']==$_SESSION['userID']){
     header('Location:myProfile.php');
 } else {
     
+    //TUDJI PROFIL
     
     
     require_once 'userProfileTemplate.html';

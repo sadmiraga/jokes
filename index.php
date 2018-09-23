@@ -40,7 +40,9 @@
             echo 'NOT LOGGED IN';
         } else 
         {
+            echo 'logged as : ';
             echo $_SESSION['username'];
+            echo '<br>';
             
             
             // ID OD PRIJAVLJENOG USERA
@@ -48,10 +50,26 @@
             $stmt->execute(['username'=>$_SESSION['username']]);
             $userID  = $stmt->fetchColumn();
             $_SESSION['userID'] = $userID;
-            echo '<br>';
-            echo $_SESSION['userID'];
+            
+            
+            $stmt = $pdo->prepare("SELECT count(*) FROM follows WHERE following_id=?");
+            $stmt->execute([$_SESSION['userID']]);
+            $followingCount = $stmt->fetchColumn();
+            
+            if($followingCount== 0){
+                echo 'You are not following anyone.';
+                echo 'Find people to follow on <a href="categories.php" >categories</a> ';
+                
+            } else {
+                require_once 'home.php';
+            }
+            
+            
+            
             
         }
+        
+        
         
         
         ?>

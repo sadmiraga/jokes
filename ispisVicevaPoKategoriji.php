@@ -10,7 +10,7 @@ $categoryID = $stmt->fetchColumn();
 
 
 // SELECT STAVEK ZA FORE
-$query = "SELECT jokeText,likes,user_id FROM jokes WHERE category_id=:category_id";
+$query = "SELECT id,jokeText,likes,user_id FROM jokes WHERE category_id=:category_id";
 $stmt = $pdo->prepare($query);
 $stmt->execute(['category_id'=>$categoryID]);
 echo '<br>';
@@ -41,11 +41,26 @@ while($row = $stmt->fetch()){
         echo '</div>';
         
         
-        // LIKE BUTTON
-        echo '<div class="like" >';
-            echo 'Like';
-        echo '</div>';
+        //PROVJERA DA LI JE USER VEC LIKEDOVO OBJAVU
+        $stmt3 = $pdo->prepare("SELECT count(*) FROM likes WHERE user_id=? AND liked_Joke_Id=? ");
+        $stmt3->execute([$_SESSION['userID'],$row['id']]);
+        $jesilLajko = $stmt3->fetchColumn();
         
+        if($jesilLajko == 0){
+            $likeOrNoLike = "Like";
+        } else {
+            $likeOrNoLike = "Unlike";
+        }
+        
+        
+        
+        
+        // LIKE BUTTON
+        echo '<a class="likeHref" href="likeExecute.php?likeID='.$row['id'].'">';
+            echo '<div class="like" >';
+                echo $likeOrNoLike;
+            echo '</div>';
+        echo '</a>';
         
         
         
