@@ -121,7 +121,8 @@ require_once 'connection.php';
                     
                     //EDIT 
                         echo '<div id="editJokeHelp">';
-                            echo '<a id="editJokeLink" href="#">';
+                        //LINK SALJE ID OD ODABRANOG VICA
+                            echo '<a id="editJokeLink" href="editJoke.php?editID='.$row['id'].'">';
                                 echo '<div id="editJoke">';
                                     echo 'EDIT';
                                 echo '</div>';
@@ -130,7 +131,7 @@ require_once 'connection.php';
                     
                     //DELETE
                         echo '<div id="deleteJokeHelp">';
-                            echo '<a id="deleteJokeLink" href="#">';
+                            echo '<a id="deleteJokeLink" href="deleteExecute.php?deleteID='.$row['id'].'">';
                                 echo '<div id="deleteJoke">';
                                     echo 'DELETE ';
                                 echo '</div>';

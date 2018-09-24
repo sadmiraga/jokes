@@ -4,23 +4,94 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="addCategoryDesign.css">
-        <title>TODO supply a title</title>
+        <title>ADD CATEGORY</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+
+body{
+  background-color:black;
+}
+
+#form{
+  outline:3px solid white;
+  width:30%;
+  margin-left:35%;
+  margin-right:35%;
+  padding:2%;
+  text-align:center;
+  margin-top:5%;
+}
+
+#addCategoryNaslov{
+     margin: 0 0 20px;
+    line-height: 1;
+    color: white;
+    text-align:center;
+    font-size: 15px;
+}
+
+#inputCategoryName{
+   outline: none;
+    display: block;
+    width: 80%;
+    margin-left:10%;
+    margin-right:10%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    font-family: "Roboto";
+    box-sizing: border-box;
+    font-size: 14px;
+    font-wieght: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: 0.2s linear;
+}
+
+#submitButton{
+    cursor:pointer;
+    background: black;
+    width: 40%;
+    padding: 2px 5px;
+    border: 0;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 400;
+    outline:3px solid white;    
+    margin-left:30%;
+    margin-right:30%;
+  margin-top:5%;
+}
+
+#submitButton:hover{
+  background-color:white;
+  color:black;
+}
+
+
+        </style>
+        
     </head>
     <body>
         
-        <div id="naslov">ADD NEW CATEGORY</div>
-        
-        <div id="forma">
-            <form action="addCategoryExecute.php" method="get">
-                
-                <input id="inputNewCategory" type="text" name="imeNoveKategorije" placeholder=" category name">
-                <br> <br>
-                <input id="newCategorySubmitButton" type="submit" name="newCategorySubmit" value="ADD CATEGORY">
-            </form>
-        </div>
+        <p id="ok"> OK </p>
+
+
+
+<div id="form">
+  <h2 id="addCategoryNaslov">ADD CATEGORY NAME</h2>
+  
+ 
+  <form action="addCategoryExecute.php" method="get"  autocomplete="off">
+      <input name="imeKategorije" id="inputCategoryName"  type="text" required="required" > 
+    
+    <input name="submitDugme" type="submit" value="ADD" id="submitButton" >
+</form>
+</div>
         
         
         
