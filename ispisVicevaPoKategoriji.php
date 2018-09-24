@@ -1,7 +1,6 @@
 <?php
 
 
-
 // ID izabrane kategorije viceva
 $stmt = $pdo->prepare("SELECT id FROM category WHERE categoryName=:categoryName");
 $stmt -> execute(["categoryName"=>$imeKategorije]);
