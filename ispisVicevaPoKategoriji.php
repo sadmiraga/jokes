@@ -18,7 +18,11 @@ echo '<br>';
 
 while($row = $stmt->fetch()){
     
-    //LINK PROFILNE OD USERA KOJI JE OBJAVIO SLIKU
+    if(isset($_SESSION['username'])){
+        
+        //USER
+        
+        //LINK PROFILNE OD USERA KOJI JE OBJAVIO SLIKU
     $stmt2=$pdo->prepare("SELECT profilePictureUrl FROM profilepictures WHERE user_id=:juzerID");
     $stmt2->execute(['juzerID'=>$row['user_id']]);
     $linkSlike = $stmt2->fetchColumn();
@@ -26,6 +30,8 @@ while($row = $stmt->fetch()){
     
     echo '<div class="kontenjer">';
         
+    
+    
         // SLIKA PROFILA
             //href koji salje ID od usera na cij je profil kliknuto 
             echo '<a href="userProfile.php?idOdUseraSaPosta='.$row['user_id'].'">';
@@ -77,6 +83,64 @@ while($row = $stmt->fetch()){
         
     
     echo '</div>';
+    } else {
+        
+        //GUEST
+        
+        //LINK PROFILNE OD USERA KOJI JE OBJAVIO SLIKU
+    $stmt2=$pdo->prepare("SELECT profilePictureUrl FROM profilepictures WHERE user_id=:juzerID");
+    $stmt2->execute(['juzerID'=>$row['user_id']]);
+    $linkSlike = $stmt2->fetchColumn();
+    
+    
+    echo '<div class="kontenjer">';
+        
+    
+    
+        // SLIKA PROFILA
+            //href koji salje ID od usera na cij je profil kliknuto 
+            echo '<a href="login.php">';
+                //ispis slike
+                echo '<img class="circle-pic" src="'.$linkSlike.'" >';
+            echo '</a>';
+        
+        
+        // TEXT VICA
+        echo '<div class="fora">';
+            echo $row['jokeText'];
+        echo '</div>';
+        
+        
+       
+        
+        
+        
+        // LIKE BUTTON
+        echo '<a class="likeHref" href="login.php">';
+            echo '<div class="like" >';
+                echo 'Like';
+            echo '</div>';
+        echo '</a>';
+        
+        
+        
+        
+        // BROJ LAJKOVA
+        echo '<div class="numLikes">';
+            echo $row['likes'];
+        echo '</div>';
+        
+        //SHARE
+        echo '<div class="share" >';
+            echo 'Share';
+        echo '</div>';
+        
+        
+    
+    echo '</div>';
+    }
+    
+    
     
 }
 
