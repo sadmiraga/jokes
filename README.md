@@ -50,5 +50,8 @@ Na spletnoj strani se nalazi 5 glavnih stavkov.
     tule odjavi uporabnika 
     to sploh ni vidljivo ce uporabnik ni prijavljen 
     
+  SLIKA ER MODELA 
+
+![ER_MODEL](slika baze podataka.png)
               
         
