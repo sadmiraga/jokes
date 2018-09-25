@@ -52,6 +52,6 @@ Na spletnoj strani se nalazi 5 glavnih stavkov.
     
   SLIKA ER MODELA 
 
-![ER_MODEL](slika baze podataka.png)
+https://github.com/sadmiraga/jokes/blob/master/slika%20baze%20podataka.png
               
         
