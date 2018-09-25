@@ -52,7 +52,7 @@ Na spletnoj strani se nalazi 5 glavnih stavkov.
     
   SLIKA ER MODELA 
 
-![slikabebemi](![slika_baze_podataka](https://user-images.githubusercontent.com/42960898/46000284-649f4b80-c0a8-11e8-86be-8a81761161cc.jpg)
-)
+![slika_baze_podataka](https://user-images.githubusercontent.com/42960898/46000284-649f4b80-c0a8-11e8-86be-8a81761161cc.jpg)
+
          
         
