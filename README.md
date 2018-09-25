@@ -52,7 +52,7 @@ Na spletnoj strani se nalazi 5 glavnih stavkov.
     
   SLIKA ER MODELA 
   
-  ![slika](jokes/slika_baze_podataka.png)
+  ![slika](https://github.com/sadmiraga/jokes/slika_baze_podataka.png)
 
 https://github.com/sadmiraga/jokes/blob/master/slika%20baze%20podataka.png
          
